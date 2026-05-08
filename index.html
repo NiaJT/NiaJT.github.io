@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Portfolio of Niraj Thapa — Full-Stack Developer"
-    />
+    <meta name="description" content="Portfolio of Niraj Thapa — Full-Stack Developer" />
     <title>Niraj Thapa — Full-Stack Developer</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Progress bar -->
+    <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
     <!-- Skip link for accessibility -->
     <a class="skip-link" href="#main">Skip to content</a>
 
@@ -22,129 +22,64 @@
     <header class="site-header" role="banner">
       <div class="container header-inner">
         <a class="brand" href="#hero">NT</a>
-        <nav
-          class="nav"
-          id="primary-navigation"
-          aria-label="Primary navigation"
-        >
-          <button
-            id="nav-toggle"
-            class="nav-toggle"
-            aria-controls="nav-list"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+        <nav class="nav" id="primary-navigation" aria-label="Primary navigation">
+          <button id="nav-toggle" class="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">
             <span class="hamburger" aria-hidden="true"></span>
           </button>
           <ul id="nav-list" class="nav-list">
-            <li><a href="#hero" data-nav="hero" class="nav-link">Home</a></li>
-            <li>
-              <a href="#about" data-nav="about" class="nav-link">About</a>
-            </li>
-            <li>
-              <a href="#skills" data-nav="skills" class="nav-link">Skills</a>
-            </li>
-            <li>
-              <a href="#experience" data-nav="experience" class="nav-link"
-                >Experience</a
-              >
-            </li>
-            <li>
-              <a href="#projects" data-nav="projects" class="nav-link"
-                >Projects</a
-              >
-            </li>
-            <li>
-              <a href="#education" data-nav="education" class="nav-link"
-                >Education</a
-              >
-            </li>
-            <li>
-              <a href="#contact" data-nav="contact" class="nav-link">Contact</a>
-            </li>
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
-          <div class="header-controls">
-            <button
-              id="theme-toggle"
-              class="theme-toggle"
-              aria-label="Toggle theme"
-              title="Toggle light/dark theme"
-            >
-              <span class="theme-icon" aria-hidden="true">🌓</span>
-              <span class="theme-text" data-theme-text>Dark</span>
-            </button>
-          </div>
         </nav>
+        <div class="header-controls">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme">
+            <span class="theme-icon" aria-hidden="true">🌓</span>
+            <span class="theme-text" data-theme-text>Dark</span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="main">
       <!-- Hero -->
-      <section id="hero" class="hero section" data-section>
+      <section id="hero" class="hero section reveal" data-section>
         <div class="container hero-inner">
           <div class="hero-content">
             <p class="eyebrow">Full-Stack Developer</p>
             <h1 class="name">Niraj Thapa</h1>
-            <p class="title-line">Full-Stack Developer | IT Enthusiast</p>
-
-            <p class="hero-actions">
-              <a class="btn primary" href="#projects">View Projects</a>
-              <a
-                class="btn outline"
-                href="assets/Niraj-Thapa-CV.pdf"
-                target="_blank"
-                rel="noopener"
-                >View CV</a
-              >
+            <p class="title-line">
+              <span aria-live="polite" aria-atomic="true" id="typewriter"></span>
             </p>
 
+            <div class="hero-actions">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn outline" href="assets/Niraj-Thapa-CV.pdf" target="_blank" rel="noopener">View CV</a>
+            </div>
+
             <div class="socials">
-              <a
-                href="https://github.com/NiaJT"
-                target="_blank"
-                rel="noopener"
-                aria-label="GitHub"
-                >GitHub</a
-              >
-              <a
-                href="https://www.linkedin.com/in/niraj-thapa-949251275"
-                target="_blank"
-                rel="noopener"
-                aria-label="LinkedIn"
-                >LinkedIn</a
-              >
-              <a href="mailto:nirajthapa457@gmail.com" aria-label="Email"
-                >Email</a
-              >
+              <a href="https://github.com/NiaJT" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+              <a href="https://www.linkedin.com/in/niraj-thapa-949251275" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+              <a href="mailto:nirajthapa457@gmail.com" aria-label="Email">Email</a>
             </div>
           </div>
 
-          <aside class="profile-card" aria-labelledby="profile-summary">
+          <aside class="profile-card reveal" aria-labelledby="profile-summary">
             <div class="photo-wrap">
-              <img
-                id="profile-photo"
-                src="assets/profile.jpeg"
-                alt="Profile photo of Niraj Thapa"
-              />
+              <img id="profile-photo" src="assets/profile.jpeg" alt="Profile photo of Niraj Thapa" />
+              <div class="photo-placeholder">NT</div>
             </div>
             <div class="profile-body">
               <h2 id="profile-summary">Quick Summary</h2>
-              <p>
-                Driven, collaborative, and ready to contribute. Open to
-                opportunities.
-              </p>
+              <p>Driven, collaborative, and ready to contribute. Open to opportunities.</p>
               <ul class="profile-meta">
                 <li><strong>Location:</strong> Jhaukhel, Bhaktapur</li>
-                <li>
-                  <strong>Email:</strong>
-                  <a href="mailto:nirajthapa457@gmail.com"
-                    >nirajthapa457@gmail.com</a
-                  >
-                </li>
-                <li>
-                  <strong>Phone:</strong>
-                  <a href="tel:+9779863479231">9863479231</a>
-                </li>
+                <li><strong>Email:</strong> <a href="mailto:nirajthapa457@gmail.com">nirajthapa457@gmail.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+9779863479231">9863479231</a></li>
               </ul>
             </div>
           </aside>
@@ -152,94 +87,63 @@
       </section>
 
       <!-- About -->
-      <section id="about" class="section about" data-section>
+      <section id="about" class="section about reveal" data-section>
         <div class="container">
           <h2 class="section-title">About</h2>
           <p class="lead">
-            Driven and detail-oriented Full-Stack Developer with strong skills
-            in both frontend and backend development. Experienced in building
-            responsive, dynamic web applications and creating efficient,
-            user-focused solutions. Passionate about learning new technologies
-            and eager to contribute to innovative projects that drive digital
-            transformation and growth.
+            Driven and detail-oriented Full-Stack Developer with strong skills in both frontend and backend development. Experienced in building responsive, dynamic web applications and creating efficient, user-focused solutions. Passionate about learning new technologies and eager to contribute to innovative projects that drive digital transformation and growth.
           </p>
         </div>
       </section>
 
       <!-- Skills -->
-      <section id="skills" class="section skills" data-section>
+      <section id="skills" class="section skills reveal" data-section>
         <div class="container">
           <h2 class="section-title">Skills</h2>
           <div class="skills-chips" id="skills-container">
-            <button class="skill-chip" data-skill="Frontend">HTML</button>
-            <button class="skill-chip" data-skill="Frontend">CSS</button>
-            <button class="skill-chip" data-skill="Frontend">JavaScript</button>
-            <button class="skill-chip" data-skill="Frontend">React</button>
-            <button class="skill-chip" data-skill="Frontend">Next.js</button>
-            <button class="skill-chip" data-skill="Frontend">
-              Tailwind CSS
-            </button>
-            <button class="skill-chip" data-skill="Frontend">shadcn/ui</button>
-            <button class="skill-chip" data-skill="Frontend">
-              Material UI
-            </button>
-            <button class="skill-chip" data-skill="Backend">Node.js</button>
-            <button class="skill-chip" data-skill="Backend">Express.js</button>
-            <button class="skill-chip" data-skill="Database">PostgreSQL</button>
-            <button class="skill-chip" data-skill="Database">MongoDB</button>
-            <button class="skill-chip" data-skill="DevOps">Docker</button>
-            <button class="skill-chip" data-skill="DevOps">
-              GitHub Actions
-            </button>
-            <button class="skill-chip" data-skill="DevOps">Git</button>
-            <button class="skill-chip" data-skill="DevOps">JWT</button>
-            <button class="skill-chip" data-skill="DevOps">bcrypt</button>
-            <button class="skill-chip" data-skill="DevOps">
-              TanStack Query
-            </button>
+            <button class="skill-chip active" data-skill="all">All</button>
+            <button class="skill-chip" data-skill="frontend">Frontend</button>
+            <button class="skill-chip" data-skill="backend">Backend</button>
+            <button class="skill-chip" data-skill="database">Database</button>
+            <button class="skill-chip" data-skill="devops">DevOps</button>
+          </div>
+          <div class="skills-list" id="skills-list">
+            <div class="skill-item" data-skill="frontend">HTML</div>
+            <div class="skill-item" data-skill="frontend">CSS</div>
+            <div class="skill-item" data-skill="frontend">JavaScript</div>
+            <div class="skill-item" data-skill="frontend">React</div>
+            <div class="skill-item" data-skill="frontend">Next.js</div>
+            <div class="skill-item" data-skill="frontend">Tailwind CSS</div>
+            <div class="skill-item" data-skill="frontend">shadcn/ui</div>
+            <div class="skill-item" data-skill="frontend">Material UI</div>
+            <div class="skill-item" data-skill="backend">Node.js</div>
+            <div class="skill-item" data-skill="backend">Express.js</div>
+            <div class="skill-item" data-skill="database">PostgreSQL</div>
+            <div class="skill-item" data-skill="database">MongoDB</div>
+            <div class="skill-item" data-skill="devops">Docker</div>
+            <div class="skill-item" data-skill="devops">GitHub Actions</div>
+            <div class="skill-item" data-skill="devops">Git</div>
+            <div class="skill-item" data-skill="devops">JWT</div>
+            <div class="skill-item" data-skill="devops">bcrypt</div>
+            <div class="skill-item" data-skill="devops">TanStack Query</div>
           </div>
         </div>
       </section>
 
       <!-- Experience -->
-      <section id="experience" class="section experience" data-section>
+      <section id="experience" class="section experience reveal" data-section>
         <div class="container">
           <h2 class="section-title">Experience</h2>
           <article class="job">
             <h3>Full-Stack Developer — NepDine (Klaguso Startup)</h3>
-            <p class="job-meta">
-              July 2025 – November 2025 —
-              <a
-                href="https://nepdine.klaguso.com"
-                target="_blank"
-                rel="noopener"
-                >nepdine.klaguso.com</a
-              >
-            </p>
+            <p class="job-meta">July 2025 – November 2025 — <a href="https://nepdine.klaguso.com" target="_blank" rel="noopener">nepdine.klaguso.com</a></p>
             <ul>
-              <li>
-                Developed a restaurant reservation and ordering platform as part
-                of a startup team.
-              </li>
-              <li>
-                Built the frontend with Next.js, React and shadcn/ui, delivering
-                a responsive and user-friendly UI/UX.
-              </li>
-              <li>
-                Integrated REST APIs and used TanStack Query for efficient data
-                fetching and caching.
-              </li>
-              <li>
-                Designed PostgreSQL schemas for restaurant, menu, and booking
-                management.
-              </li>
-              <li>
-                Implemented backend services with Express.js following a modular
-                REST architecture.
-              </li>
-              <li>
-                Collaborated on planning, testing, and deployment strategies.
-              </li>
+              <li>Developed a restaurant reservation and ordering platform as part of a startup team.</li>
+              <li>Built the frontend with Next.js, React and shadcn/ui, delivering a responsive and user-friendly UI/UX.</li>
+              <li>Integrated REST APIs and used TanStack Query for efficient data fetching and caching.</li>
+              <li>Designed PostgreSQL schemas for restaurant, menu, and booking management.</li>
+              <li>Implemented backend services with Express.js following a modular REST architecture.</li>
+              <li>Collaborated on planning, testing, and deployment strategies.</li>
               <li>Project is under active development and testing.</li>
             </ul>
           </article>
@@ -247,75 +151,37 @@
       </section>
 
       <!-- Projects -->
-      <section id="projects" class="section projects" data-section>
+      <section id="projects" class="section projects reveal" data-section>
         <div class="container">
           <h2 class="section-title">Projects</h2>
           <div class="projects-grid">
-            <article class="project-card">
+            <article class="project-card reveal">
               <div class="project-media">
                 <div class="project-spotlight"></div>
-                <img
-                  src="assets/projects/securemed.png"
-                  alt="Secure Medical Record-Sharing System screenshot"
-                />
+                <img src="assets/projects/securemed.png" alt="Secure Medical Record-Sharing System screenshot" />
               </div>
               <div class="project-body">
                 <h3>Secure Medical Record-Sharing System</h3>
-                <p class="project-points">
-                  AES-256 encryption, QR-based access, blockchain logging, built
-                  with React and Tailwind; backend Node/Express/MongoDB;
-                  Dockerized with CI/CD via GitHub Actions.
-                </p>
-                <p class="project-links">
-                  <a
-                    class="btn"
-                    href="https://secure-med.vercel.app"
-                    target="_blank"
-                    rel="noopener"
-                    >Live</a
-                  >
-                  <a
-                    class="btn outline"
-                    href="https://github.com/NiaJT/secureMed"
-                    target="_blank"
-                    rel="noopener"
-                    >Code</a
-                  >
-                </p>
+                <p class="project-points">AES-256 encryption, QR-based access, blockchain logging, built with React and Tailwind; backend Node/Express/MongoDB; Dockerized with CI/CD via GitHub Actions.</p>
+                <div class="project-links">
+                  <a class="btn" href="https://secure-med.vercel.app" target="_blank" rel="noopener">Live</a>
+                  <a class="btn outline" href="https://github.com/NiaJT/secureMed" target="_blank" rel="noopener">Code</a>
+                </div>
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card reveal">
               <div class="project-media">
                 <div class="project-spotlight"></div>
-                <img
-                  src="assets/projects/emart.png"
-                  alt="Full-Stack E-commerce Platform screenshot"
-                />
+                <img src="assets/projects/emart.png" alt="Full-Stack E-commerce Platform screenshot" />
               </div>
               <div class="project-body">
                 <h3>Full-Stack E-commerce Platform (Role-Based Access)</h3>
-                <p class="project-points">
-                  Role-based buyers/sellers, Next.js/React/Tailwind/MUI
-                  frontend; Express + MongoDB backend; JWT and bcrypt for auth;
-                  TanStack Query and Formik + Yup for forms and validation.
-                </p>
-                <p class="project-links">
-                  <a
-                    class="btn"
-                    href="https://emart-lyart.vercel.app/"
-                    target="_blank"
-                    rel="noopener"
-                    >Live</a
-                  >
-                  <a
-                    class="btn outline"
-                    href="https://github.com/NiaJT/ful-stack-super-market"
-                    target="_blank"
-                    rel="noopener"
-                    >Code</a
-                  >
-                </p>
+                <p class="project-points">Role-based buyers/sellers, Next.js/React/Tailwind/MUI frontend; Express + MongoDB backend; JWT and bcrypt for auth; TanStack Query and Formik + Yup for forms and validation.</p>
+                <div class="project-links">
+                  <a class="btn" href="https://emart-lyart.vercel.app/" target="_blank" rel="noopener">Live</a>
+                  <a class="btn outline" href="https://github.com/NiaJT/ful-stack-super-market" target="_blank" rel="noopener">Code</a>
+                </div>
               </div>
             </article>
           </div>
@@ -323,92 +189,43 @@
       </section>
 
       <!-- Education -->
-      <section id="education" class="section education" data-section>
+      <section id="education" class="section education reveal" data-section>
         <div class="container">
           <h2 class="section-title">Education</h2>
           <ol class="timeline">
-            <li>
-              <strong>SEE</strong>
-              <span>Everest English School, Mibacchen Bhaktapur (2077)</span>
-            </li>
-            <li>
-              <strong>+2</strong>
-              <span
-                >Khwopa Higher Secondary School, Dekocha Bhaktapur (2080)</span
-              >
-            </li>
-            <li>
-              <strong>BSc CSIT</strong>
-              <span
-                >St. Xavier’s College, Maitighar Kathmandu (2080–present)</span
-              >
-            </li>
+            <li><strong>SEE</strong> <span>Everest English School, Mibacchen Bhaktapur (2077)</span></li>
+            <li><strong>+2</strong> <span>Khwopa Higher Secondary School, Dekocha Bhaktapur (2080)</span></li>
+            <li><strong>BSc CSIT</strong> <span>St. Xavier's College, Maitighar Kathmandu (2080–present)</span></li>
           </ol>
         </div>
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="section contact" data-section>
+      <section id="contact" class="section contact reveal" data-section>
         <div class="container">
           <h2 class="section-title">Contact</h2>
           <div class="contact-grid">
-            <div>
-              <p>
-                <strong>Email:</strong>
-                <a href="mailto:nirajthapa457@gmail.com"
-                  >nirajthapa457@gmail.com</a
-                >
-              </p>
-              <p>
-                <strong>Phone:</strong>
-                <a href="tel:+9779863479231">9863479231</a>
-              </p>
+            <div class="contact-info">
+              <p><strong>Email:</strong> <a href="mailto:nirajthapa457@gmail.com">nirajthapa457@gmail.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+9779863479231">9863479231</a></p>
               <p><strong>Location:</strong> Jhaukhel, Bhaktapur</p>
-              <p>
-                <a class="btn primary" href="mailto:nirajthapa457@gmail.com"
-                  >Email Me</a
-                >
-              </p>
+              <a class="btn primary" href="mailto:nirajthapa457@gmail.com">Email Me</a>
             </div>
 
-            <form
-              class="contact-form"
-              id="contact-form"
-              aria-label="Contact form"
-            >
+            <form class="contact-form" id="contact-form" aria-label="Contact form">
               <label>
                 <span class="sr-only">Name</span>
-                <input
-                  type="text"
-                  id="contact-name"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                />
+                <input type="text" id="contact-name" name="name" placeholder="Your name" required />
               </label>
               <label>
                 <span class="sr-only">Email</span>
-                <input
-                  type="email"
-                  id="contact-email"
-                  name="email"
-                  placeholder="Your email"
-                  required
-                />
+                <input type="email" id="contact-email" name="email" placeholder="Your email" required />
               </label>
               <label>
                 <span class="sr-only">Message</span>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  placeholder="Your message"
-                  rows="4"
-                  required
-                ></textarea>
+                <textarea id="contact-message" name="message" placeholder="Your message" rows="4" required></textarea>
               </label>
-              <p>
-                <button class="btn primary" type="submit">Send Message</button>
-              </p>
+              <button class="btn primary" type="submit">Send Message</button>
             </form>
           </div>
         </div>
@@ -418,15 +235,8 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-links">
-          <a href="https://github.com/NiaJT" target="_blank" rel="noopener"
-            >GitHub</a
-          >
-          <a
-            href="https://www.linkedin.com/in/niraj-thapa-949251275"
-            target="_blank"
-            rel="noopener"
-            >LinkedIn</a
-          >
+          <a href="https://github.com/NiaJT" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/niraj-thapa-949251275" target="_blank" rel="noopener">LinkedIn</a>
           <a href="mailto:nirajthapa457@gmail.com">Email</a>
         </div>
         <p class="copy">© 2026 Niraj Thapa. All rights reserved.</p>
