@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -68,9 +68,10 @@
               id="theme-toggle"
               class="theme-toggle"
               aria-label="Toggle theme"
-              title="Toggle light/dark"
+              title="Toggle light/dark theme"
             >
               <span class="theme-icon" aria-hidden="true">🌓</span>
+              <span class="theme-text" data-theme-text>Dark</span>
             </button>
           </div>
         </nav>
@@ -253,6 +254,7 @@
           <div class="projects-grid">
             <article class="project-card">
               <div class="project-media">
+                <div class="project-spotlight"></div>
                 <img
                   src="assets/projects/securemed.png"
                   alt="Secure Medical Record-Sharing System screenshot"
@@ -286,6 +288,7 @@
 
             <article class="project-card">
               <div class="project-media">
+                <div class="project-spotlight"></div>
                 <img
                   src="assets/projects/emart.png"
                   alt="Full-Stack E-commerce Platform screenshot"
