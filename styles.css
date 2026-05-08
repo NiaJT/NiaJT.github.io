@@ -1,9 +1,8 @@
 /*
-  Premium Dark Glass + Neon Gradient Portfolio
+  Premium Dark Glass Portfolio — Teal + Gold Accent
   - Dark default, light mode support
-  - Glassmorphism cards with violet→cyan gradient accent
-  - Animated gradient blobs, smooth animations
-  - Responsive, professional, interactive
+  - Glassmorphism with subtle teal→gold gradient accents
+  - Professional, refined, accessible
 */
 
 /* ===== 1) CSS VARIABLES & THEMING ===== */
@@ -18,38 +17,42 @@
   --s7: 4rem;
 
   /* Dark theme (default) */
-  --bg: #0a0e1a;
-  --surface: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.12);
-  --text: rgba(255, 255, 255, 0.95);
-  --text-muted: rgba(255, 255, 255, 0.65);
+  --bg: #0b0f14;
+  --bg-2: #0f1720;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.10);
+  --text: rgba(255, 255, 255, 0.92);
+  --text-muted: rgba(255, 255, 255, 0.70);
   
-  /* Gradient accent: violet to cyan */
-  --accent-1: #7c3aed;
-  --accent-2: #06b6d4;
-  --accent: var(--accent-1);
+  /* Accent: teal + warm gold */
+  --a1: #2dd4bf;
+  --a2: #f59e0b;
+  --accent: var(--a1);
   
-  /* Shadows & effects */
+  /* Shadows & effects (subtle) */
   --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.3);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 30px 90px rgba(0, 0, 0, 0.6);
-  --glow: 0 0 30px rgba(124, 58, 237, 0.3);
+  --glow: 0 0 24px rgba(45, 212, 191, 0.2);
   --radius: 16px;
   --radius-sm: 10px;
 }
 
 :root[data-theme="light"] {
-  --bg: #f8f9fa;
-  --surface: rgba(124, 58, 237, 0.06);
-  --border: rgba(124, 58, 237, 0.14);
-  --text: #0f172a;
-  --text-muted: #475569;
-  --accent-1: #6d28d9;
-  --accent-2: #0891b2;
+  --bg: #fafaf9;
+  --bg-2: #ffffff;
+  --surface: rgba(15, 23, 32, 0.04);
+  --surface-2: rgba(15, 23, 32, 0.07);
+  --border: rgba(15, 23, 32, 0.12);
+  --text: rgba(15, 23, 32, 0.92);
+  --text-muted: rgba(15, 23, 32, 0.66);
+  --a1: #14b8a6;
+  --a2: #d97706;
   --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.08);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 30px 90px rgba(0, 0, 0, 0.15);
-  --glow: 0 0 30px rgba(124, 58, 237, 0.15);
+  --glow: 0 0 24px rgba(20, 184, 166, 0.15);
 }
 
 /* ===== 2) GLOBAL RESET & BASE ===== */
@@ -85,13 +88,13 @@ canvas {
 }
 
 a {
-  color: var(--accent);
+  color: var(--a1);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--accent-2);
+  color: #2ec5b0;
 }
 
 button {
@@ -112,7 +115,7 @@ button {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  background: linear-gradient(90deg, var(--a1), var(--a2));
   width: 0%;
   z-index: 9999;
   transition: width 0.1s ease;
@@ -122,7 +125,7 @@ button {
 .blob {
   position: fixed;
   border-radius: 50%;
-  opacity: 0.12;
+  opacity: 0.08;
   z-index: -1;
   will-change: transform;
 }
@@ -130,7 +133,7 @@ button {
 .blob--1 {
   width: 600px;
   height: 600px;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  background: linear-gradient(135deg, var(--a1), var(--a2));
   top: -100px;
   left: 10%;
   animation: float 8s ease-in-out infinite;
@@ -139,7 +142,7 @@ button {
 .blob--2 {
   width: 500px;
   height: 500px;
-  background: linear-gradient(45deg, var(--accent-2), var(--accent-1));
+  background: linear-gradient(45deg, var(--a2), var(--a1));
   bottom: 50px;
   right: 5%;
   animation: float 10s ease-in-out infinite 1s;
@@ -148,7 +151,7 @@ button {
 .blob--3 {
   width: 700px;
   height: 700px;
-  background: linear-gradient(225deg, var(--accent-1), var(--accent-2));
+  background: linear-gradient(225deg, var(--a1), var(--a2));
   top: 50%;
   right: -200px;
   animation: float 12s ease-in-out infinite 2s;
@@ -183,13 +186,13 @@ button {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 14, 26, 0.75);
+  background: rgba(11, 15, 20, 0.75);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
 :root[data-theme="light"] .site-header {
-  background: rgba(248, 249, 250, 0.8);
+  background: rgba(250, 250, 249, 0.8);
 }
 
 .header-inner {
@@ -202,7 +205,7 @@ button {
 .brand {
   font-size: 1.5rem;
   font-weight: 900;
-  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  background: linear-gradient(90deg, var(--a1), var(--a2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -245,13 +248,13 @@ button {
 
 .nav-link.active {
   color: var(--text);
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(6, 182, 212, 0.2));
-  border: 1px solid var(--accent-1);
-  box-shadow: inset 0 0 12px rgba(124, 58, 237, 0.15);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.15), rgba(245, 158, 11, 0.1));
+  border: 1px solid var(--a1);
+  box-shadow: inset 0 0 12px rgba(45, 212, 191, 0.1);
 }
 
 .nav-link:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--a1);
   outline-offset: 4px;
 }
 
@@ -276,11 +279,11 @@ button {
 
 .theme-toggle:hover {
   background: var(--surface);
-  border-color: var(--accent);
+  border-color: var(--a1);
 }
 
 .theme-toggle:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--a1);
   outline-offset: 2px;
 }
 
@@ -303,7 +306,7 @@ button {
 }
 
 .nav-toggle:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--a1);
   outline-offset: 2px;
 }
 
@@ -370,7 +373,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 }
 
 .eyebrow {
-  color: var(--accent-1);
+  color: var(--a1);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -412,7 +415,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 }
 
 .socials a:hover {
-  color: var(--accent-1);
+  color: var(--a1);
   transform: translateY(-2px);
 }
 
@@ -435,8 +438,8 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 
 .btn:hover {
   transform: translateY(-2px);
-  border-color: var(--accent-1);
-  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--a1);
+  background: rgba(45, 212, 191, 0.08);
 }
 
 .btn:active {
@@ -444,30 +447,30 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--a1);
   outline-offset: 2px;
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  background: linear-gradient(135deg, var(--a1), var(--a2));
   border: none;
   color: white;
-  box-shadow: var(--glow);
+  box-shadow: 0 0 24px rgba(45, 212, 191, 0.2);
 }
 
 .btn.primary:hover {
-  box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
-  filter: brightness(1.1);
+  box-shadow: 0 0 32px rgba(45, 212, 191, 0.3);
+  filter: brightness(1.08);
 }
 
 .btn.outline {
-  border: 2px solid var(--accent-1);
+  border: 2px solid var(--a1);
   background: transparent;
-  color: var(--accent-1);
+  color: var(--a1);
 }
 
 .btn.outline:hover {
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(45, 212, 191, 0.08);
 }
 
 /* ===== 10) PROFILE CARD ===== */
@@ -475,7 +478,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
   display: flex;
   flex-direction: column;
   gap: var(--s3);
-  background: linear-gradient(135deg, var(--surface), rgba(255, 255, 255, 0.04));
+  background: linear-gradient(135deg, var(--surface), var(--surface-2));
   border: 1px solid var(--border);
   padding: var(--s4);
   border-radius: var(--radius);
@@ -486,7 +489,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 .profile-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
-  border-color: var(--accent-1);
+  border-color: var(--a1);
 }
 
 .photo-wrap {
@@ -496,8 +499,8 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
   margin: 0 auto;
   border-radius: 14px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+  background: linear-gradient(135deg, var(--a1), var(--a2));
+  box-shadow: 0 8px 24px rgba(45, 212, 191, 0.15);
 }
 
 .photo-wrap img {
@@ -544,12 +547,12 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 }
 
 .profile-meta a {
-  color: var(--accent-1);
+  color: var(--a1);
   transition: color 0.2s ease;
 }
 
 .profile-meta a:hover {
-  color: var(--accent-2);
+  color: var(--a2);
 }
 
 /* ===== 11) SKILL CHIPS ===== */
@@ -576,21 +579,21 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 }
 
 .skill-chip:hover {
-  border-color: var(--accent-1);
+  border-color: var(--a1);
   color: var(--text);
-  background: rgba(124, 58, 237, 0.12);
+  background: rgba(45, 212, 191, 0.08);
   transform: translateY(-2px);
 }
 
 .skill-chip.active {
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.2));
-  border-color: var(--accent-1);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.2), rgba(245, 158, 11, 0.15));
+  border-color: var(--a1);
   color: var(--text);
   box-shadow: var(--glow);
 }
 
 .skill-chip:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--a1);
   outline-offset: 2px;
 }
 
@@ -603,7 +606,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 .skill-item {
   padding: var(--s3);
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, var(--surface), rgba(255, 255, 255, 0.04));
+  background: linear-gradient(135deg, var(--surface), var(--surface-2));
   border: 1px solid var(--border);
   text-align: center;
   font-weight: 500;
@@ -624,7 +627,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 .skill-item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-sm);
-  border-color: var(--accent-1);
+  border-color: var(--a1);
 }
 
 /* ===== 12) PROJECT CARDS ===== */
@@ -635,7 +638,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 }
 
 .project-card {
-  background: linear-gradient(135deg, var(--surface), rgba(255, 255, 255, 0.04));
+  background: linear-gradient(135deg, var(--surface), var(--surface-2));
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -650,7 +653,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, rgba(124, 58, 237, 0.2), transparent 50%, rgba(6, 182, 212, 0.2));
+  background: linear-gradient(45deg, rgba(45, 212, 191, 0.1), transparent 50%, rgba(245, 158, 11, 0.08));
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -660,7 +663,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--accent-1);
+  border-color: var(--a1);
 }
 
 .project-card:hover::before { opacity: 1; }
@@ -670,7 +673,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
   position: relative;
   height: 240px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(6, 182, 212, 0.1));
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.08), rgba(245, 158, 11, 0.05));
 }
 
 .project-spotlight {
@@ -678,7 +681,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.4), rgba(6, 182, 212, 0.2) 70%, transparent);
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.3), rgba(245, 158, 11, 0.15) 70%, transparent);
   filter: blur(30px);
   pointer-events: none;
   z-index: 1;
@@ -784,7 +787,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--accent-1);
+  background: var(--a1);
   border: 3px solid var(--bg);
   box-shadow: var(--glow);
 }
@@ -848,9 +851,9 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--accent-1);
-  box-shadow: 0 0 12px rgba(124, 58, 237, 0.2);
+  background: rgba(45, 212, 191, 0.06);
+  border-color: var(--a1);
+  box-shadow: 0 0 12px rgba(45, 212, 191, 0.15);
 }
 
 @media (min-width: 768px) {
@@ -887,7 +890,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 }
 
 .footer-links a:hover {
-  color: var(--accent-1);
+  color: var(--a1);
 }
 
 .copy {
@@ -927,7 +930,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent-1);
+  outline: 2px solid var(--a1);
   outline-offset: 4px;
 }
 
@@ -953,7 +956,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
     position: fixed;
     right: var(--s3);
     top: 70px;
-    background: rgba(10, 14, 26, 0.95);
+    background: rgba(11, 15, 20, 0.95);
     backdrop-filter: blur(10px);
     padding: var(--s3);
     border-radius: var(--radius);
@@ -967,7 +970,7 @@ body.nav-open .hamburger::after { transform: rotate(-45deg) translateY(0); top: 
   }
 
   :root[data-theme="light"] .nav-list {
-    background: rgba(248, 249, 250, 0.95);
+    background: rgba(250, 250, 249, 0.95);
   }
 
   body.nav-open .nav-list {
