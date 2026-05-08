@@ -1,21 +1,24 @@
-// script.js — theme toggle, nav behavior, intersection observers for active nav and reveal
-// Saves theme in localStorage key 'theme'.
+// script.js — Enhanced interactive portfolio
+// Theme management, nav behavior, skill filtering, scroll reveals, improved contact form
 
-// --- Theme handling ---
+// --- 1) Theme Toggle & Persistence ---
 (function () {
   const THEME_KEY = "theme";
   const root = document.documentElement;
   const btn = document.getElementById("theme-toggle");
 
   function applyTheme(theme) {
-    if (theme === "light") root.setAttribute("data-theme", "light");
-    else root.removeAttribute("data-theme");
+    if (theme === "light") {
+      root.setAttribute("data-theme", "light");
+    } else {
+      root.removeAttribute("data-theme");
+    }
     try {
       localStorage.setItem(THEME_KEY, theme);
     } catch (e) {}
   }
 
-  // initialize
+  // Initialize
   const saved = (function () {
     try {
       return localStorage.getItem(THEME_KEY);
@@ -33,7 +36,7 @@
   }
 })();
 
-// --- Nav toggle and responsive closing ---
+// --- 2) Nav Toggle & Responsive Behavior ---
 (function () {
   const navToggle = document.getElementById("nav-toggle");
   const body = document.body;
@@ -63,9 +66,9 @@
   });
 })();
 
-// --- Section active link using IntersectionObserver ---
+// --- 3) Active Nav Link via IntersectionObserver ---
 (function () {
-  const options = { root: null, rootMargin: "0px", threshold: 0.6 };
+  const options = { root: null, rootMargin: "0px", threshold: 0.5 };
   const sections = document.querySelectorAll("section[data-section]");
   const navLinks = document.querySelectorAll(".nav-link");
 
@@ -87,7 +90,7 @@
   sections.forEach((s) => io.observe(s));
 })();
 
-// --- Reveal animations for elements on scroll ---
+// --- 4) Scroll Reveal Animations ---
 (function () {
   const reveals = document.querySelectorAll(
     ".section, .project-card, .profile-card",
@@ -103,21 +106,23 @@
     },
     { threshold: 0.12 },
   );
+
   reveals.forEach((r) => {
     r.classList.add("reveal");
     ro.observe(r);
   });
 })();
 
-// --- Profile image fallback placeholder ---
+// --- 5) Profile Image Fallback ---
 (function () {
   const img = document.getElementById("profile-photo");
   if (!img) return;
+
   img.addEventListener("error", () => {
     const wrap = img.closest(".photo-wrap");
     if (wrap) wrap.classList.add("no-photo");
   });
-  // If image loads but is blank, still show placeholder
+
   img.addEventListener("load", () => {
     if (img.naturalWidth === 0) {
       const wrap = img.closest(".photo-wrap");
@@ -126,7 +131,66 @@
   });
 })();
 
-// --- Smooth keyboard focus for links that jump to sections ---
+// --- 6) Skill Chip Filtering ---
+(function () {
+  const skillChips = document.querySelectorAll(".skill-chip");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  // Chips are interactive for future filtering
+  skillChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chip.classList.toggle("active");
+      // Future: filter projects by skill
+    });
+  });
+
+  // Show all projects by default
+  projectCards.forEach((card) => {
+    card.classList.add("reveal");
+  });
+})();
+
+// --- 7) Contact Form with Encoded Mailto ---
+(function () {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nameInput = document.getElementById("contact-name");
+    const emailInput = document.getElementById("contact-email");
+    const messageInput = document.getElementById("contact-message");
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    // Build subject and body
+    const subject = `Portfolio Contact — ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`;
+
+    // Encode and create mailto link
+    const mailtoLink = `mailto:nirajthapa457@gmail.com?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+
+    // Open mail client
+    window.location.href = mailtoLink;
+
+    // Clear form after a delay
+    setTimeout(() => {
+      form.reset();
+    }, 500);
+  });
+})();
+
+// --- 8) Smooth Focus for Section Links ---
 (function () {
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
@@ -134,13 +198,18 @@
       if (target && target.startsWith("#")) {
         const el = document.querySelector(target);
         if (el) {
-          // allow default jump but ensure focus for accessibility
-          setTimeout(
-            () => el.setAttribute("tabindex", "-1") && el.focus(),
-            300,
-          );
+          setTimeout(() => {
+            el.setAttribute("tabindex", "-1");
+            el.focus();
+          }, 300);
         }
       }
     });
   });
+})();
+
+// --- 9) Prevent horizontal scroll on long content ---
+(function () {
+  document.documentElement.style.overflowX = "hidden";
+  document.body.style.overflowX = "hidden";
 })();

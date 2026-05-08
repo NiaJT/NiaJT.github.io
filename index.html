@@ -14,10 +14,14 @@
     <!-- Skip link for accessibility -->
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <!-- Gradient blobs background -->
+    <div class="blob blob--1" aria-hidden="true"></div>
+    <div class="blob blob--2" aria-hidden="true"></div>
+    <div class="blob blob--3" aria-hidden="true"></div>
+
     <header class="site-header" role="banner">
       <div class="container header-inner">
-        <a class="brand" href="#hero">Niraj Thapa</a>
-
+        <a class="brand" href="#hero">NT</a>
         <nav
           class="nav"
           id="primary-navigation"
@@ -32,7 +36,6 @@
           >
             <span class="hamburger" aria-hidden="true"></span>
           </button>
-
           <ul id="nav-list" class="nav-list">
             <li><a href="#hero" data-nav="hero" class="nav-link">Home</a></li>
             <li>
@@ -60,7 +63,6 @@
               <a href="#contact" data-nav="contact" class="nav-link">Contact</a>
             </li>
           </ul>
-
           <div class="header-controls">
             <button
               id="theme-toggle"
@@ -168,26 +170,33 @@
       <section id="skills" class="section skills" data-section>
         <div class="container">
           <h2 class="section-title">Skills</h2>
-          <div class="skills-grid">
-            <div>
-              <h3>Frontend</h3>
-              <p>
-                HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, shadcn/ui,
-                Material UI
-              </p>
-            </div>
-            <div>
-              <h3>Backend</h3>
-              <p>Node.js, Express.js</p>
-            </div>
-            <div>
-              <h3>Database</h3>
-              <p>PostgreSQL, MongoDB</p>
-            </div>
-            <div>
-              <h3>DevOps / Tools</h3>
-              <p>Docker, GitHub Actions, Git, JWT, bcrypt, TanStack Query</p>
-            </div>
+          <div class="skills-chips" id="skills-container">
+            <button class="skill-chip" data-skill="Frontend">HTML</button>
+            <button class="skill-chip" data-skill="Frontend">CSS</button>
+            <button class="skill-chip" data-skill="Frontend">JavaScript</button>
+            <button class="skill-chip" data-skill="Frontend">React</button>
+            <button class="skill-chip" data-skill="Frontend">Next.js</button>
+            <button class="skill-chip" data-skill="Frontend">
+              Tailwind CSS
+            </button>
+            <button class="skill-chip" data-skill="Frontend">shadcn/ui</button>
+            <button class="skill-chip" data-skill="Frontend">
+              Material UI
+            </button>
+            <button class="skill-chip" data-skill="Backend">Node.js</button>
+            <button class="skill-chip" data-skill="Backend">Express.js</button>
+            <button class="skill-chip" data-skill="Database">PostgreSQL</button>
+            <button class="skill-chip" data-skill="Database">MongoDB</button>
+            <button class="skill-chip" data-skill="DevOps">Docker</button>
+            <button class="skill-chip" data-skill="DevOps">
+              GitHub Actions
+            </button>
+            <button class="skill-chip" data-skill="DevOps">Git</button>
+            <button class="skill-chip" data-skill="DevOps">JWT</button>
+            <button class="skill-chip" data-skill="DevOps">bcrypt</button>
+            <button class="skill-chip" data-skill="DevOps">
+              TanStack Query
+            </button>
           </div>
         </div>
       </section>
@@ -362,24 +371,42 @@
 
             <form
               class="contact-form"
-              action="mailto:nirajthapa457@gmail.com"
-              method="post"
-              enctype="text/plain"
+              id="contact-form"
               aria-label="Contact form"
             >
               <label>
                 <span class="sr-only">Name</span>
-                <input type="text" name="name" placeholder="Your name" />
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </label>
+              <label>
+                <span class="sr-only">Email</span>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="Your email"
+                  required
+                />
               </label>
               <label>
                 <span class="sr-only">Message</span>
                 <textarea
+                  id="contact-message"
                   name="message"
                   placeholder="Your message"
                   rows="4"
+                  required
                 ></textarea>
               </label>
-              <p><button class="btn" type="submit">Send (mailto)</button></p>
+              <p>
+                <button class="btn primary" type="submit">Send Message</button>
+              </p>
             </form>
           </div>
         </div>
